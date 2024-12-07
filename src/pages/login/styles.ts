@@ -76,7 +76,7 @@ export const style = StyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#388E3C', // Verde do botão "Entrar"
+    backgroundColor: '#307a59', // Verde do botão "Entrar"
     marginBottom: 10, // Espaço inferior entre os botões
   },
 

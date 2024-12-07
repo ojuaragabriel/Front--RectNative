@@ -6,16 +6,24 @@ const Tab = createBottomTabNavigator();
 
 export default function BottomRoutes() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+    screenOptions={{
+      headerShown:false
+    }}
+    >
       <Tab.Screen 
             name="Entrar" 
             component={Entrar} 
+            options={{
+              tabBarStyle: { display: 'none' }  // Remove a barra de navegação inferior apenas para "Criar"
+            }}    
         />
 
       <Tab.Screen 
             name="Criar" 
             component={Criar} 
         />
+        
     </Tab.Navigator>
   );
 }
