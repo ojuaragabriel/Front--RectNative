@@ -7,6 +7,7 @@ import MenuAdm from '../pages/menuAdm';
 import MenuProdutor from "../pages/menuProdutor";
 import NlADM from "../pages/nlADM";
 import NlPROD from "../pages/nlPROD";
+import MlPROD from "../pages/mlPROD";
 
 
 export default function Routes(){
@@ -50,6 +51,10 @@ export default function Routes(){
                 <Stack.Screen 
                     name = "NlPROD"
                     component={NlPROD}
+                />
+                <Stack.Screen 
+                    name = "MlPROD"
+                    component={MlPROD}
                 />
 
         </Stack.Navigator>

@@ -9,7 +9,7 @@ export default function MenuProdutor() {
     <View style={styles.telaInicial}>
       <Image style={styles.logo} resizeMode="cover" source={require('../../assets/loguinho.png')} />
       <View style={styles.buttonContainer}>
-        <Pressable style={[styles.button, styles.linhasButton]} onPress={() => {}}>
+        <Pressable style={[styles.button, styles.linhasButton]} onPress={() => navigation.navigate('MlPROD')}>
           <Text style={styles.buttonText}>MEUS LOTES</Text>
         </Pressable>
         <Pressable style={[styles.button, styles.perfilButton]} onPress={() => {}}>
@@ -18,7 +18,7 @@ export default function MenuProdutor() {
         <Pressable style={[styles.button, styles.novaLinhaButton]} onPress={() => navigation.navigate('NlPROD')}>
           <Text style={styles.buttonText}>NOVO LOTE</Text>
         </Pressable>
-        <Pressable style={[styles.button, styles.sairButton]} onPress={() => {}}>
+        <Pressable style={[styles.button, styles.sairButton]} onPress={() => {navigation.navigate('Login')}}>
           <Text style={styles.buttonText}>SAIR</Text>
         </Pressable>
       </View>

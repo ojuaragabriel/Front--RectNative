@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigation, NavigationProp } from "@react-navigation/native";
 import { StyleSheet, View, Text, Pressable, Alert } from "react-native";
-import { Camera } from "expo-camera";
+import { Camera } from "expo-camera";  // Certifique-se de ter a importação do expo-camera
+import Constants from 'expo-constants';
 
 export default function NlPROD() {
   const navigation = useNavigation<NavigationProp<any>>();
@@ -43,7 +44,7 @@ export default function NlPROD() {
             style={styles.camera}
             onBarCodeScanned={handleQRCodeScanned}
             barCodeScannerSettings={{
-              barCodeTypes: [Camera.Constants.BarCodeType.qr],
+              barCodeTypes: [Camera.BarCodeType.qr],  // Acesso direto ao BarCodeType.qr
             }}
           />
         ) : (
