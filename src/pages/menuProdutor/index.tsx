@@ -12,7 +12,7 @@ export default function MenuProdutor() {
         <Pressable style={[styles.button, styles.linhasButton]} onPress={() => navigation.navigate('MlPROD')}>
           <Text style={styles.buttonText}>MEUS LOTES</Text>
         </Pressable>
-        <Pressable style={[styles.button, styles.perfilButton]} onPress={() => {}}>
+        <Pressable style={[styles.button, styles.perfilButton]} onPress={() => navigation.navigate('Perfil')}>
           <Text style={styles.buttonText}>PERFIL</Text>
         </Pressable>
         <Pressable style={[styles.button, styles.novaLinhaButton]} onPress={() => navigation.navigate('NlPROD')}>

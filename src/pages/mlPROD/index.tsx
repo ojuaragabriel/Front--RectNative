@@ -1,10 +1,14 @@
 import { useNavigation, NavigationProp } from "@react-navigation/native";
-import React from "react";
-import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, View, Text, ScrollView, TextInput } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome'; // Importando os ícones
 
 export default function MlPROD() {
   const navigation = useNavigation<NavigationProp<any>>();
+  
+  const [etapa1, setEtapa1] = useState('');
+  const [etapa2, setEtapa2] = useState('');
+  const [etapa3, setEtapa3] = useState('');
 
   // Função para navegar para a tela "Ver Processo"
   const handleVerProcesso = () => {
@@ -25,18 +29,27 @@ export default function MlPROD() {
               <Text style={styles.statusText}>Pendente</Text>
             </View>
             <View style={styles.processoContainer}>
-              <TouchableOpacity style={styles.processoBox} onPress={handleVerProcesso}>
-                <Text style={styles.processo}>Processo 1</Text>
-                <Icon name="eye" size={20} color="#454545" style={styles.icon} />
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.processoBox} onPress={handleVerProcesso}>
-                <Text style={styles.processo}>Processo 2</Text>
-                <Icon name="eye" size={20} color="#454545" style={styles.icon} />
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.processoBox}>
-                <Text style={styles.processo}>Processo 3</Text>
-                <Icon name="lock-open" size={20} color="#454545" style={styles.icon} /> {/* Ícone de cadeado aberto */}
-              </TouchableOpacity>
+              <TextInput
+                style={styles.processoBox}
+                value={etapa1}
+                onChangeText={setEtapa1}
+                placeholder="Processo 1"
+                keyboardType="default"
+              />
+              <TextInput
+                style={styles.processoBox}
+                value={etapa2}
+                onChangeText={setEtapa2}
+                placeholder="Processo 2"
+                keyboardType="default"
+              />
+              <TextInput
+                style={styles.processoBox}
+                value={etapa3}
+                onChangeText={setEtapa3}
+                placeholder="Processo 3"
+                keyboardType="default"
+              />
             </View>
           </View>
 
@@ -48,18 +61,27 @@ export default function MlPROD() {
               <Text style={styles.statusText}>Concluído</Text>
             </View>
             <View style={styles.processoContainer}>
-              <TouchableOpacity style={styles.processoBox} onPress={handleVerProcesso}>
-                <Text style={styles.processo}>Processo 1</Text>
-                <Icon name="eye" size={20} color="#454545" style={styles.icon} />
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.processoBox} onPress={handleVerProcesso}>
-                <Text style={styles.processo}>Processo 2</Text>
-                <Icon name="eye" size={20} color="#454545" style={styles.icon} />
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.processoBox}>
-                <Text style={styles.processo}>Processo 3</Text>
-                <Icon name="lock-open" size={20} color="#454545" style={styles.icon} /> {/* Ícone de cadeado aberto */}
-              </TouchableOpacity>
+              <TextInput
+                style={styles.processoBox}
+                value={etapa1}
+                onChangeText={setEtapa1}
+                placeholder="Processo 1"
+                keyboardType="default"
+              />
+              <TextInput
+                style={styles.processoBox}
+                value={etapa2}
+                onChangeText={setEtapa2}
+                placeholder="Processo 2"
+                keyboardType="default"
+              />
+              <TextInput
+                style={styles.processoBox}
+                value={etapa3}
+                onChangeText={setEtapa3}
+                placeholder="Processo 3"
+                keyboardType="default"
+              />
             </View>
           </View>
 
@@ -71,18 +93,27 @@ export default function MlPROD() {
               <Text style={styles.statusText}>Concluído</Text>
             </View>
             <View style={styles.processoContainer}>
-              <TouchableOpacity style={styles.processoBox} onPress={handleVerProcesso}>
-                <Text style={styles.processo}>Processo 1</Text>
-                <Icon name="eye" size={20} color="#454545" style={styles.icon} />
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.processoBox} onPress={handleVerProcesso}>
-                <Text style={styles.processo}>Processo 2</Text>
-                <Icon name="eye" size={20} color="#454545" style={styles.icon} />
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.processoBox}>
-                <Text style={styles.processo}>Processo 3</Text>
-                <Icon name="lock-open" size={20} color="#454545" style={styles.icon} /> {/* Ícone de cadeado aberto */}
-              </TouchableOpacity>
+              <TextInput
+                style={styles.processoBox}
+                value={etapa1}
+                onChangeText={setEtapa1}
+                placeholder="Processo 1"
+                keyboardType="default"
+              />
+              <TextInput
+                style={styles.processoBox}
+                value={etapa2}
+                onChangeText={setEtapa2}
+                placeholder="Processo 2"
+                keyboardType="default"
+              />
+              <TextInput
+                style={styles.processoBox}
+                value={etapa3}
+                onChangeText={setEtapa3}
+                placeholder="Processo 3"
+                keyboardType="default"
+              />
             </View>
           </View>
         </View>
@@ -145,21 +176,16 @@ const styles = StyleSheet.create({
   },
   processoContainer: {
     marginTop: 10,
+    flexDirection: 'column', // Garantir que os TextInput fiquem um abaixo do outro
+    justifyContent: 'space-between', // Garantir que os inputs não fiquem sobrepostos
   },
   processoBox: {
     backgroundColor: "#e1e1e1", // Cor de fundo para cada processo
     marginVertical: 5,
     padding: 10,
     borderRadius: 5,
-    flexDirection: "row", // Permite que o ícone e o texto fiquem na mesma linha
-    alignItems: "center", // Alinha os itens no centro verticalmente
-  },
-  processo: {
-    fontSize: 12,
+    fontSize: 14,
     color: "#454545",
-    flex: 1, // Para garantir que o texto ocupe todo o espaço disponível
-  },
-  icon: {
-    marginLeft: 10, // Espaço entre o texto e o ícone
+    height: 50, // Ajusta a altura das caixas de texto
   },
 });

@@ -13,10 +13,10 @@ export default function MenuAdm() {
     <View style={styles.telaInicial}>
       <Image style={styles.logo} resizeMode="cover" source={require('../../assets/loguinho.png')} />
       <View style={styles.buttonContainer}>
-        <Pressable style={[styles.button, styles.linhasButton]} onPress={() => {}}>
+        <Pressable style={[styles.button, styles.linhasButton]} onPress={() => {navigation.navigate('MlADM')}}>
           <Text style={styles.buttonText}>MINHAS LINHAS</Text>
         </Pressable>
-        <Pressable style={[styles.button, styles.perfilButton]} onPress={() => {}}>
+        <Pressable style={[styles.button, styles.perfilButton]} onPress={() => {navigation.navigate('Perfil')}}>
           <Text style={styles.buttonText}>PERFIL</Text>
         </Pressable>
         <Pressable style={[styles.button, styles.novaLinhaButton]} onPress={() => {navigation.navigate('NlADM')}}>

@@ -1,66 +1,28 @@
-import React, { useState, useEffect } from "react";
-import { useNavigation, NavigationProp } from "@react-navigation/native";
+import React, { useState } from "react";
 import { StyleSheet, View, Text, Pressable, Alert } from "react-native";
-import { Camera } from "expo-camera";  // Certifique-se de ter a importação do expo-camera
-import Constants from 'expo-constants';
 
 export default function NlPROD() {
-  const navigation = useNavigation<NavigationProp<any>>();
-  const [hasPermission, setHasPermission] = useState<boolean | null>(null);
-  const [isCameraActive, setIsCameraActive] = useState<boolean>(false);
-
-  useEffect(() => {
-    (async () => {
-      const { status } = await Camera.requestCameraPermissionsAsync();
-      setHasPermission(status === "granted");
-    })();
-  }, []);
-
-  const handleQRCodeScanned = ({ data }: { data: string }) => {
-    Alert.alert("QR Code Lido", `Conteúdo: ${data}`);
-    setIsCameraActive(false);
+  const handleQRCodeScanned = () => {
+    Alert.alert("QR Code Lido", "Simulação: Conteúdo do QR Code aqui.");
   };
-
-  if (hasPermission === null) {
-    return <Text>Solicitando permissão para a câmera...</Text>;
-  }
-  if (hasPermission === false) {
-    return (
-      <Text>
-        Sem permissão para acessar a câmera. Por favor, habilite nas
-        configurações do dispositivo.
-      </Text>
-    );
-  }
 
   return (
     <View style={styles.telaInicial}>
       <Text style={styles.adicionarNovoLote}>Adicionar novo lote</Text>
-      <Text style={styles.aponteACamera}>Aponte a câmera para o QR Code</Text>
+      <Text style={styles.aponteACamera}>Aponte o QR Code na área abaixo</Text>
 
+      {/* Simulador do leitor de QR Code */}
       <View style={styles.cameraContainer}>
-        {isCameraActive ? (
-          <Camera
-            style={styles.camera}
-            onBarCodeScanned={handleQRCodeScanned}
-            barCodeScannerSettings={{
-              barCodeTypes: [Camera.BarCodeType.qr],  // Acesso direto ao BarCodeType.qr
-            }}
-          />
-        ) : (
-          <Pressable
-            style={styles.cameraPlaceholder}
-            onPress={() => setIsCameraActive(true)}
-          >
-            <Text style={styles.cameraPlaceholderText}>
-              Clique para ativar a câmera
-            </Text>
-          </Pressable>
-        )}
+        <Pressable
+          style={styles.simulatedScanner}
+          onPress={handleQRCodeScanned}
+        >
+          <Text style={styles.simulatedScannerText}>Simulação de Leitor</Text>
+        </Pressable>
       </View>
 
-      <Pressable style={styles.cancelButton} onPress={() => navigation.goBack()}>
-        <Text style={styles.cancelButtonText}>Cancelar</Text>
+      <Pressable style={styles.cancelButton}>
+        <Text style={styles.cancelButtonText} >Cancelar</Text>
       </Pressable>
     </View>
   );
@@ -95,21 +57,20 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 20,
+    borderWidth: 2,
+    borderColor: "#000",
   },
-  camera: {
-    width: "100%",
-    height: "100%",
-  },
-  cameraPlaceholder: {
+  simulatedScanner: {
     width: "100%",
     height: "100%",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#ddd",
   },
-  cameraPlaceholderText: {
+  simulatedScannerText: {
     color: "#555",
     fontSize: 16,
+    fontWeight: "600",
   },
   cancelButton: {
     backgroundColor: "#ea4335",
