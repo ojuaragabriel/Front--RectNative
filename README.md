@@ -35,7 +35,7 @@ Antes de rodar o projeto, certifique-se de ter o seguinte instalado:
 Primeiro, clone o repositório para a sua máquina:
 
 ```bash
-git clone https://github.com/seu-usuario/Ecoflow.git
+git clone https://github.com/ojuaragabriel/Front--RectNative.git
 cd Ecoflow
 ```
 
