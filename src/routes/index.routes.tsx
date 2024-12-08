@@ -5,6 +5,9 @@ import BottomRoutes from "./bottom.routes";
 import Criar from "../pages/criar";
 import MenuAdm from '../pages/menuAdm';
 import MenuProdutor from "../pages/menuProdutor";
+import NlADM from "../pages/nlADM";
+import NlPROD from "../pages/nlPROD";
+
 
 export default function Routes(){
     const Stack = createStackNavigator()
@@ -36,10 +39,18 @@ export default function Routes(){
                     name = "MenuAdm"
                     component={MenuAdm}
                 />
-                {/* <Stack.Screen 
+                <Stack.Screen 
                     name = "MenuProdutor"
                     component={MenuProdutor}
-                /> */}
+                />
+                <Stack.Screen 
+                    name = "NlADM"
+                    component={NlADM}
+                />
+                <Stack.Screen 
+                    name = "NlPROD"
+                    component={NlPROD}
+                />
 
         </Stack.Navigator>
     )

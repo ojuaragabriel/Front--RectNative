@@ -11,6 +11,7 @@ export default function Login() {
     console.log("Senha:", password);
   };
 
+  
   return (
     <View style={styles.telaLogin}>
       <Image
@@ -30,7 +31,8 @@ export default function Login() {
       <View style={[styles.groupParent, styles.groupLayout1]}>
         <View style={styles.bemVindoDeVoltaParent}>
           <Text style={styles.bemVindoDe}>Bem vindo de volta!</Text>
-          <Text style={styles.informeSeuEMail}>
+          <Text style={styles.informeSeuEMail}
+          >
             Informe seu e-mail e senha para acessar ao sistema
           </Text>
         </View>

@@ -18,7 +18,7 @@ export default function Criar() {
 
   const handleCriarConta = () => {
     if (!nomeEmpresa || !email || !senha || !confirmarSenha) {
-      Alert.alert("Erro", "Todos os campos são obrigatórios!");
+      Alert.alert("Erro", "Todos os campos são obrigatórios!!");
       return;
     }
 

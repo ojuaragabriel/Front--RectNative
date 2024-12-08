@@ -41,7 +41,11 @@ export default function Login() {
           <Text style={style.buttonText}>Entrar</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={style.secondaryButton} onPress={() => navigation.navigate('Criar')}>
+        <TouchableOpacity 
+          style={style.secondaryButton} 
+          onPress={() => navigation.navigate('Criar')}
+          >
+
           <Text style={style.secondaryButtonText}>Criar conta</Text>
         </TouchableOpacity>
       </View>
